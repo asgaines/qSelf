@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('extra_css')
+@section('head_insert')
   <link href="{{ asset('/css/index.css') }}" rel="stylesheet">
 @endsection
 

@@ -34,9 +34,11 @@ class HomeController extends Controller {
 	public function index()
 	{
 		$thoughts = Auth::user()->thoughts;
+		$temperatures = Auth::user()->temperatures;
 
 		return view('home', array(
-			'thoughts' => $thoughts
+			'thoughts' => $thoughts,
+			'temperatures' => $temperatures,
 		));
 	}
 

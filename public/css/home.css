@@ -1,0 +1,8 @@
+.icon_link {
+  margin-left: 100px;
+  width: 300px;
+}
+
+.icon_link > img {
+  width: 60px;
+}

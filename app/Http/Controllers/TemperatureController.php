@@ -1,5 +1,12 @@
 <?php namespace qSelf\Http\Controllers;
 
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
+use \qSelf\Temperature;
+use Auth;
+use Carbon\Carbon;
+
 class TemperatureController extends Controller {
 
 	/*
@@ -41,6 +48,33 @@ class TemperatureController extends Controller {
   public function postNew()
   {
 
+		$rules = array(
+      'temperature' => 'required|numeric|min:95|max:107'
+    );
+
+    $userId = Auth::user()->id;
+    $validator = Validator::make(Input::all(), $rules);
+
+    if ($validator->fails())
+    {
+      return Redirect::route('new_temperature')->withErrors($validator);
+    }
+
+    $temperature = new Temperature;
+    $temperature->temperature = Input::get('temperature');
+    $temperature->user_id = Input::get('user_id');
+
+    if ($temperature->user_id == $userId)
+    {
+      $temperature->save();
+    }
+    else
+    {
+      // They do not have permission to upload this temperature
+      App::abort(403, 'Access denied');
+    }
+
+    return Redirect::route('home');
   }
 
 }

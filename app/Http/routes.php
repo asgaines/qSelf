@@ -17,8 +17,9 @@ Route::get('/', 'IndexController@index');
 
 Route::get('home', array('as' => 'home', 'uses' => 'HomeController@index'));
 
-Route::get('thought/{id}', array('as' => 'thought', 'uses' => 'ThoughtController@index'));
+Route::get('thought/{id}', array('as' => 'thought', 'uses' => 'ThoughtController@index'))->where('id', '[0-9]+');
 
+Route::get('thought/new', array('as' => 'get_new_thought', 'uses' => 'ThoughtController@getNew'));
 Route::post('thought/new', array('as' => 'new_thought', 'uses' => 'ThoughtController@postNew'))->before('csrf');
 
 Route::get('temperature/new', array('as' => 'new_temperature', 'uses' => 'TemperatureController@getNew'));

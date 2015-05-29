@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use \qSelf\Thought;
+use Auth;
 
 class ThoughtController extends Controller {
 
@@ -72,7 +73,7 @@ class ThoughtController extends Controller {
       App::abort(403, 'Access denied');
     }
 
-    Redirect::route('home');
+    return Redirect::route('home');
   }
 
 }

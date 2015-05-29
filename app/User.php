@@ -33,9 +33,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 
 	public function thoughts() {
-
 		return $this->hasMany('qSelf\Thought');
+	}
 
+	public function temperatures() {
+		return $this->hasMany('qSelf\Temperature');
 	}
 
 }
