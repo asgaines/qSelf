@@ -89,6 +89,11 @@ class ThoughtTableSeeder extends Seeder {
 				'thought' => 'Had my period',
 				'user_id' => 2,
 				'created_at' => date('2015-05-24 07:11:11'),
+			),
+			array(
+				'thought' => 'Hypothermia...',
+				'user_id' => 2,
+				'created_at' => date('2015-05-29 11:11:11'),
 			)
 		);
 
@@ -171,6 +176,11 @@ class TemperatureTableSeeder extends Seeder {
 				'created_at' => date('2015-05-'.($i + 22).' 11:11:11'),
 			));
 		}
+		array_push($temperatures, array(
+			'temperature' => 95,
+			'user_id' => 2,
+			'created_at' => date('2015-05-29 11:11:11'),
+		));
 
 		DB::table('temperatures')->insert($temperatures);
 	}
