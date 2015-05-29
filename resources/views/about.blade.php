@@ -6,12 +6,15 @@
 
 @section('content')
   <h1>The Quantified Self</h1>
+  <div id="quantified_self">
+    <img src="{{ URL::asset('quantified_self.jpg') }}" />
+  </div>
   <div id="about-body">
     <p>
       Advances in wearable technology allow us to monitor our bodies in ways previously not possible. Trends formerly below the threshold of our awareness are now capable of being sensed by increasingly sophisticated biosensors and communicated to the cloud and made presentable to us in a digestable manner.
     </p>
     <p>
-      Lack of centralization and standardization currently presents a problem for the digestion of all these data. qSelf aims to be this centralization by combining these data into a central dashboard united by timestamps.
+      Lack of centralization and standardization currently presents a problem for the digestion of all these data. qSelf aims to be this centralization by combining these data into a central dashboard united by the common thread of time.
     </p>
     <table style="width: 100%">
       <tr>

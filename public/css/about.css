@@ -2,3 +2,12 @@
   margin: 25px;
   font-size: 1.2em;
 }
+
+#quantified_self {
+  text-align: center;
+}
+
+#quantified_self > img {
+  width: 500px;
+  border-radius: 0.5em;
+}
