@@ -20,14 +20,14 @@
     	var container = document.getElementById('visualization');
   		var items = [
 				@foreach ($temperatures as $temperature)
-					{x: '{{ $temperature->created_at }}', y: '{{ $temperature->temperature }}' },
+					{x: '{{ $temperature->created_at }}', y: '{{ $temperature->temperature }}', label: '{{ $temperature->temperature }}'},
 				@endforeach
 		  ];
 
 		  var dataset = new vis.DataSet(items);
 		  var options = {
 		    start: '{{ $temperatures[0]->created_at->subDay(1) }}',
-		    end: '{{ $temperatures->last()->created_at->addDay(1) }}'
+		    end: '{{ $temperatures->last()->created_at->addDay(1) }}',
 		  };
 		  var graph2d = new vis.Graph2d(container, dataset, options);
 		</script>

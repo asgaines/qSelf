@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use \qSelf\Thought;
 use Auth;
+use App;
 
 class ThoughtController extends Controller {
 
@@ -37,6 +38,11 @@ class ThoughtController extends Controller {
 	public function index($thought_id)
 	{
     $thought = Thought::find($thought_id);
+		if ($thought->user_id != Auth::user()->id)
+		{
+			// This thought doesn't belong to them. Don't show; private feature
+			App::abort(403, 'Access denied');
+		}
     return view('thought', array('thought' => $thought));
 	}
 
