@@ -2,8 +2,8 @@
 
 @section('head_insert')
 	<link href="{{ asset('/css/home.css') }}" rel="stylesheet">
-	<script src="{{ asset('/js/vis/dist/vis.js') }}"></script>
-  <link href="{{ asset('/js/vis/dist/vis.css') }}" rel="stylesheet" type="text/css" />
+	<script src="{{ asset('/js/vis/dist/vis.min.js') }}"></script>
+  <link href="{{ asset('/css/vis.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
