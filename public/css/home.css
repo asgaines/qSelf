@@ -6,3 +6,7 @@
 .icon_link > img {
   width: 60px;
 }
+
+#visualization {
+  margin: 20px;
+}
