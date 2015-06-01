@@ -41,24 +41,24 @@ class UserTableSeeder extends Seeder {
 	 */
 	public function run()
 	{
-    DB::table('users')->delete();  // Clear the table first so as not to add duplicate profiles
+            DB::table('users')->delete();  // Clear the table first so as not to add duplicate profiles
 
-    $users = array(
-        array(
-            'id' => 1,
-            'name' => 'Dummy No1',
-            'password' => Hash::make('password1'),
-            'email' => 'dummy1@example.com'
-        ),
-        array(
-            'id' => 2,
-            'name' => 'Dummy No2',
-            'password' => Hash::make('password2'),
-            'email' => 'dummy2@example.com'
-        )
-    );
+            $users = array(
+                array(
+                    'id' => 1,
+                    'name' => 'Dummy No1',
+                    'password' => Hash::make('password1'),
+                    'email' => 'dummy1@example.com'
+                ),
+                array(
+                    'id' => 2,
+                    'name' => 'Dummy No2',
+                    'password' => Hash::make('password2'),
+                    'email' => 'dummy2@example.com'
+                )
+            );
 
-    DB::table('users')->insert($users);
+            DB::table('users')->insert($users);
 	}
 
 }
