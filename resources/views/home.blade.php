@@ -8,7 +8,7 @@
 
 @section('content')
 	<h1>Your Dashboard</h1>
-	@if (!$temperatures->isEmpty())
+	@if (!($temperatures->isEmpty()))
 		<div class="graph">
 			<div id="visualization"></div>
 			<script type="text/javascript">
